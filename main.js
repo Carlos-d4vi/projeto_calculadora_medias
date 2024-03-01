@@ -1,8 +1,18 @@
 const form = document.querySelector('form')
 
-while (media === undefined || null) {
-    const media = prompt('qual a média para ser aprovado?')
-}
+let media;
+
+do {
+    media = parseInt(prompt('Qual é a média para ser aprovado?'));
+
+    // Verificar se a entrada é um número válido
+    if (!isNaN(media)) {
+        console.log(media);
+        break; // Sai do loop se a entrada for um número válido
+    } else {
+        alert('Por favor, insira um número válido.');
+    }
+} while (true);
 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
