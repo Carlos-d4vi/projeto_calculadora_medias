@@ -1,6 +1,8 @@
 const form = document.querySelector('form')
 
-const media = prompt('qual a média para ser aprovado?')
+while (media === undefined || null) {
+    const media = prompt('qual a média para ser aprovado?')
+}
 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
