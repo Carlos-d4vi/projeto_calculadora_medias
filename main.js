@@ -1,6 +1,6 @@
 const form = document.querySelector('form')
 
-
+const media = prompt('qual a média para ser aprovado?')
 
 form.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -18,7 +18,7 @@ form.addEventListener('submit', function(e) {
 
 
     const image = document.createElement('img')
-    const resultado = notaAluno.value >= 7 ? 'aprovado' : 'reprovado'
+    const resultado = notaAluno.value >= media ? 'aprovado' : 'reprovado'
     image.src = resultado === 'aprovado' ? "images/aprovado.png" : "images/reprovado.png"
     const colunaResultado = document.createElement('td')
 
@@ -52,7 +52,7 @@ form.addEventListener('submit', function(e) {
 
     const mediaResultado = document.getElementById('mediaResultado')
 
-    if(mediaCalculadaResultado >= 7){
+    if(mediaCalculadaResultado >= media){
         mediaResultado.textContent = 'aprovado'
         mediaResultado.style.backgroundColor = '#009432'
     }else{
